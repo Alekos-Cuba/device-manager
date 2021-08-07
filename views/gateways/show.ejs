@@ -17,23 +17,25 @@
         <div class="card-subtitle mb-2">IPv4 Address: <%= gateway.ipAddress %></div>
         <a href="/" class="btn btn-secondary">Back</a>
         <a href="/gateways/edit/<%= gateway.id %>" class="btn btn-info">Edit</a>
-        <div class="mt-4">
-            <h3>
-                Linked peripherals
-            </h3>
-            <div class="container">
-                <% gateway.peripherals.forEach(peripheral => { %>
-                    <div class="card mb-2">
-                        <div class="card-body">
-                            <h6 class="card-title">UID: <%= peripheral.uid %></h6>
-                            <div class="card-subtitle">Vendor: <%= peripheral.vendor%></div>
-                            <div class="card-subtitle">Created at: <%= peripheral.dateCreated%></div>
-                            <div class="card-subtitle">Status: <%= peripheral.status%></div>
+        <% if(gateway.peripherals.length > 0) { %>
+            <div class="mt-4">
+                <h4>Linked peripherals</h4>
+                <div class="container">
+                    <% gateway.peripherals.forEach(peripheral => { %>
+                        <div class="card mb-2">
+                            <div class="card-body">
+                                <h6 class="card-title">UID: <%= peripheral.uid %></h6>
+                                <div class="card-subtitle">Vendor: <%= peripheral.vendor%></div>
+                                <div class="card-subtitle">Created at: <%= peripheral.dateCreated%></div>
+                                <div class="card-subtitle">Status: <%= peripheral.status%></div>
+                            </div>
                         </div>
-                    </div>
-                <% }) %>
+                    <% }) %>
+                </div>
             </div>
-        </div>
+        <% } else { %>
+            <h6 class="mt-4">No peripherals attached, create a new peripheral and associate it to this device</h6>
+        <% } %>
     </div>
 </body>
 
