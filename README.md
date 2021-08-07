@@ -14,7 +14,5 @@ I'm not used to work extensively with NodeJs and MongoDB, however, I wanted to f
  - Open browser and navigate to http://localhost:<APP_PORT> (defined in .env file)
  - Enjoy jumping between pages watching pretty buttons and boring information (-_-)
 
-*** Known bugs ***
- - When creating new peripherals, there is no restriction/validation for UID(s), so for the moment you can create more than one peripheral with the same uid (I know, it sucks! that's why I'm warning you :p)
 
 Thanks for reading!
