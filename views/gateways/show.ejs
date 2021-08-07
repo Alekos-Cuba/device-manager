@@ -28,6 +28,10 @@
                                 <div class="card-subtitle">Vendor: <%= peripheral.vendor%></div>
                                 <div class="card-subtitle">Created at: <%= peripheral.dateCreated%></div>
                                 <div class="card-subtitle">Status: <%= peripheral.status%></div>
+                                <form action="/gateways/rmdev/<%= peripheral.uid %>?_method=PUT" method="POST">
+                                    <input type="hidden" value="<%= gateway.slug %>" name="gtwId" id="gtwId">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
                             </div>
                         </div>
                     <% }) %>

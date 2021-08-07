@@ -24,6 +24,21 @@ router.get("/:slug", async (req, res) => {
   res.render("gateways/show", { gateway: gateway });
 });
 
+router.put("/rmdev/:id", async (req, res) => {
+  let gateway = await Gateway.findOne({ slug: req.body.gtwId });
+  let devices = gateway.peripherals;
+  let dev = devices.find(function (d) {
+    return d.uid === req.params.id;
+  });
+  devices.splice(devices.indexOf(dev), 1);
+  try {
+    gateway = await gateway.save();
+    res.redirect(`/gateways/${gateway.slug}`);
+  } catch (err) {
+    res.render("error/show", { message: err.message });
+  }
+});
+
 router.post(
   "/",
   async (req, res, next) => {
