@@ -1,0 +1,40 @@
+//create-use database
+    use gwman_db
+
+//create "gateways" collection
+    db.createCollection("gateways")
+
+//insert sampledata
+    db.gateways.insert({
+        "peripherals" : [{
+            "uid" : "842685248528425",
+            "vendor" : "Microsoft",
+            "dateCreated" : "2021-01-07",
+            "status" : "Online"
+            }],
+        "name" : "Gateway 1",
+        "serialNo" : "SN-125BN",
+        "ipAddress" : "10.27.30.25",
+        "slug" : "gateway-1"
+    })
+
+    db.gateways.insert({
+        "peripherals" : [{
+            "uid" : "432562852",
+            "vendor" : "NVidia",
+            "dateCreated" : "2021-08-07",
+            "status" : "Offline"
+            }],
+        "name" : "Gateway 2",
+        "serialNo" : "SN-5874YQ",
+        "ipAddress" : "30.31.0.10",
+        "slug" : "gateway-2"
+    })
+
+    db.gateways.insert({
+        "peripherals" : [ ],
+        "name" : "Gateway 3",
+        "serialNo" : "SN-KJ986M",
+        "ipAddress" : "10.20.30.40",
+        "slug" : "gateway-3"
+    })
