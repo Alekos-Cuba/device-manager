@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Gateways info</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="card-title mb-4">Gateways and peripherals</h1>
+        <a href="/" class="btn btn-secondary mb-2">Back</a>
+        <% gateways.forEach(gateway => { %>
+            <div class="card mb-2">
+                <div class="card-body">
+                    <h6 class="card-title"><%= gateway.name %></h6>
+                    <div class="card-subtitle">Serial No: <%= gateway.serialNo %></div>
+                    <div class="card-subtitle">IPv4 Address: <%= gateway.ipAddress %></div>
+                    <% if(gateway.peripherals.length > 0) { %>
+                        <h6 class="mt-2">Peripherals</h6>
+                        <% gateway.peripherals.forEach(peripheral => { %>
+                            <div class="card mb-2">
+                                <div class="card-body">
+                                    <h6 class="card-title">UID: <%= peripheral.uid %></h6>
+                                    <div class="card-subtitle">Vendor: <%= peripheral.vendor%></div>
+                                    <div class="card-subtitle">Created at: <%= peripheral.dateCreated%></div>
+                                    <div class="card-subtitle">Status: <%= peripheral.status%></div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    <% } %>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<div class="form-group mb-4">
+    <label for="name">Name</label>
+    <input required value="<%= gateway.name %>" type="text" name="name" id="name" class="form-control">
+</div>
+
+<div class="form-group mb-4">
+    <label for="serial">Serial Number</label>
+    <input required value="<%= gateway.serialNo %>" type="text" name="serialNo" id="serialNo" class="form-control">
+</div>
+
+<div class="form-group mb-4">
+    <label for="ipAddress">IPv4 Address <i>(example: 172.168.1.25)</i></label>
+    <input required
+        pattern="^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+        value="<%= gateway.ipAddress %>" type="text" name="ipAddress" id="ipAddress" class="form-control">
+</div>
+
+<a href="/" class="btn btn-secondary">Cancel</a>
+<button type="submit" class="btn btn-primary">Save</button>
