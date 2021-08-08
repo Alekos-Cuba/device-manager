@@ -14,7 +14,9 @@
   <div class="container">
     <h1 class="mb-4">Gateways Manager</h1>
     <a href="/gateways/new" class="btn btn-success">New Gateway</a>
-    <a href="/peripherals/new" class="btn btn-success">New Peripheral</a>
+    <% if(gateways.length > 0) { %>
+      <a href="/peripherals/new" class="btn btn-success">New Peripheral</a>
+    <% } %>
     <a href="/gateways/info" class="btn btn-primary">Show All Info</a>
 
     <% gateways.forEach(gateway => { %>

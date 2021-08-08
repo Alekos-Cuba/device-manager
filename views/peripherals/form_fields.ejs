@@ -22,13 +22,21 @@
 </div>
 
 <div class="form-group mb-4">
-    <label for="gatewayPick">Associate to</label>
-    <select required class="btn btn-success form-control" name="gatewayPick" id="gatewayPick">
-        <% availableGateways.forEach(gateway => { %>
-            <option value="<%= gateway.slug %>"><%= gateway.name %></option>
-        <% }) %>
-    </select>
+    <%  let allowSave = false;
+        if(availableGateways.length > 0) { 
+            allowSave = true %>
+            <label for="gatewayPick">Associate to</label>
+            <select required class="btn btn-success form-control" name="gatewayPick" id="gatewayPick">
+                <% availableGateways.forEach(gateway => { %>
+                    <option value="<%= gateway.slug %>"><%= gateway.name %></option>
+                <% }) %>
+            </select>
+        <% } else { %>
+            <h6>There are no available gateways</h6>
+        <% } %>
 </div>
 
 <a href="/" class="btn btn-secondary">Cancel</a>
-<button type="submit" class="btn btn-primary">Save</button>
+<% if(allowSave) { %>
+    <button type="submit" class="btn btn-primary">Save</button>
+<% } %>
