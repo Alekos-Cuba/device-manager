@@ -5,9 +5,12 @@ I'm not used to work extensively with NodeJs and MongoDB, however, I wanted to f
 
 *** How to ***
  - Clone this repo from Gitlab
- - Since I couldn't provide a script for restoring the database, please follow these steps:
-    - Look for a file named "sampledata" in sampledata folder
+   
+   (Optional - only if you want to have some initial data, you can always create this data yourself thru the app's UI)
+ - Since I couldn't provide a script for restoring the sample data into the database, please follow these steps:
+    - Look for a file named "sampledata" in sampledata folder (inside project's main folder)
     - Follow the instructions described in the file to create a local db and insert the data provided
+ 
  - Adjust values in the .env file to match your environment (database name, port for the app, etc)
  - Open cmd at project's root folder
    - Run "npm install" (without quotes) to download dependencies 
