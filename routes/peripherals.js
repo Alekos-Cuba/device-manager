@@ -2,6 +2,10 @@ const express = require("express");
 const router = express.Router();
 const Gateway = require("./../models/gateway");
 
+let getAvailableGateways = async () => {
+  return await Gateway.find({ $where: "this.peripherals.length < 10" });
+};
+
 router.get("/new", async (req, res) => {
   let gateways = await getAvailableGateways();
   res.render("peripherals/new", {
@@ -12,7 +16,7 @@ router.get("/new", async (req, res) => {
 router.post("/", async (req, res) => {
   let gateway = await Gateway.findOne({ slug: req.body.gatewayPick });
   let devices = gateway.peripherals;
-  let sameUidDevice = devices.find(function (d) {
+  let sameUidDevice = devices.find((d) => {
     return d.uid === req.body.uid;
   });
   if (sameUidDevice) {
@@ -37,9 +41,5 @@ router.post("/", async (req, res) => {
     res.render("error/show", { message: err.message });
   }
 });
-
-async function getAvailableGateways() {
-  return await Gateway.find({ $where: "this.peripherals.length < 10" });
-}
 
 module.exports = router;
