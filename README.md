@@ -9,10 +9,11 @@ I'm not used to work extensively with NodeJs and MongoDB, however, I wanted to f
     - Look for a file named "sampledata" in sampledata folder
     - Follow the instructions described in the file to create a local db and insert the data provided
  - Adjust values in the .env file to match your environment (database name, port for the app, etc)
- - Run npm install to download dependencies
- - Run script devStart (npm run devStart) to start the server
+ - Open cmd at project's root folder
+   - Run "npm install" (without quotes) to download dependencies 
+   - Run "node server.js" (without quotes) to start the server
  - Open browser and navigate to http://localhost:<APP_PORT> (defined in .env file)
- - Enjoy jumping between pages watching pretty buttons and boring information (-_-)
+ - Enjoy jumping between pages watching pretty buttons while creating/deleting entries in the database
 
 
 Thanks for reading!
