@@ -15,5 +15,7 @@ I'm not used to work extensively with NodeJs and MongoDB, however, I wanted to f
  - Open browser and navigate to http://localhost:<APP_PORT> (defined in .env file)
  - Enjoy jumping between pages watching pretty buttons while creating/deleting entries in the database
 
+*** Missing features ***
+ - Unit tests (sorry, got no time... but soon)
 
 Thanks for reading!
